@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
+	<title>GradeGuesser</title>
+
+	<style>
+		body
+		{
+			background:darkgreen ;
+			color: white;
+			font-family: 'Permanent Marker';font-size: 22px;
+		}
+	</style>
+
+
+</head>
+
+
+
+<body>
+	<div class= "text-center mt-3 container">
+		<h1 style= "font-size: 55px;">GradeGuesser</h1>
+		<p style= "font-size: 25px; font-family: sans-serif;"><i>Input your grades on the subjects below to predict your General Weighted Average!</i></p>
+		
+	</div>
+
+	<div class= "container">
+		<table class= "table table-border table-striped text-center" style= "font-size: 30px;">
+	  <tr>
+	    <th><img src="math.png" alt="math" width="90%"></th>
+	    <th><img src="science.png" alt="science" height= "430px"width="100%"></th>
+	    <th><img src="eng.png" alt="english" width="100%" height= "430px"></th>
+	  </tr>
+
+  		<tr>
+    		<td><b>Math</b></td>
+    		<td><b>Science</b></td>
+    		<td><b>English</b></td>
+  		</tr>
+
+  		<tr>
+   		 <td><input id="math"type= "number" class= "form-control text-center" style= "color: green; font-size: 30px; font-weight: bold"></td>
+   		 <td><input id="science"type= "number" class= "form-control text-center" style= "color: green; font-size: 30px; font-weight: bold"></td>
+   		 <td><input id="english" type= "number" class= "form-control text-center" style= "color: green; font-size: 30px; font-weight: bold;"></td>
+    		
+ 		 </tr>
+
+		</table>
+
+		<div class= "text-center">
+			<button class="btn btn-lg btn-warning w-100" onclick="Calculate()">Get General Weighted Average</button></th>
+			<p style= "font-size: 25px; font-family: sans-serif;" id= "result"><i></i></p>
+		</div>
+
+		<div class= "text-center mt-3">
+			<p style= "font-size: 20px; font-family: sans-serif;"><i>Note: Rating varies depending on schools and insitutions.</i></p>
+			<p style= "font-size: 20px; font-family: sans-serif;"><i>@ Sophia Jimenez 2025</i></p>
+		</div>
+		
+	</div>
+
+</body>
+
+
+
+
+<script>
+	function Calculate (){
+		var math = parseInt(document.getElementById('math').value);
+		var science = parseInt(document.getElementById('science').value);
+		var english = parseInt(document.getElementById('english').value);
+
+		var grade = (math + science + english) / 3;
+		
+
+
+
+	   switch (true) {
+			 
+	    case (grade >= 94):
+        alert("Your General Average is: "   + grade.toFixed(2) + "  - Excellent");
+        break;
+
+        case (grade >= 87 && grade <= 93.99):
+        alert("Your General Average is: "   + grade.toFixed(2) + "  - Above Satisfactory");
+        break;
+
+        case (grade >= 80 && grade <=86.99):
+        alert("Your General Average is: "   + grade.toFixed(2) + "  - Satisfactory");
+        break;
+        
+
+        case (grade >= 75 && grade <=79.99):
+        alert("Your General Average is: "   + grade.toFixed(2) + "  - Needs Improvement");
+        break;
+       
+
+        case (grade >= 70 && grade <=74.99):
+        alert("Your General Average is: "   + grade.toFixed(2) + "  - Poor");
+        break;
+        
+
+
+        default:
+        alert("Below school standard or invalid output!");
+        break;
+				
+			}
+		}
+
+	
+
+
+</script>
+</html>
+
+
+ 
